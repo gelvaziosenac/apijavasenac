@@ -32,10 +32,16 @@ public class ProdutoController {
 	@ResponseStatus(HttpStatus.OK)
 	public List<Produto> consultaCadastro(@Validated @RequestBody ConsultaPadrao cadastro) throws ResourceNotFoundException {
 
-		String campoUsuario = cadastro.getCampo();
+		String campoConsulta = cadastro.getCampo();
 		List<Produto> listaProduto = new ArrayList<>();
 
-		switch (campoUsuario) {
+		if(cadastro.getValor1() == null){
+			return this.produtoRepository.findAll();
+		} else if(cadastro.getValor1().equals("")){
+			return this.produtoRepository.findAll();
+		}
+
+		switch (campoConsulta) {
 			case "codigoConsulta":
 				Produto produto = produtoRepository.findById(Long.parseLong(cadastro.getValor1()))
 						.orElseThrow(() -> new ResourceNotFoundException("Registro não encontrado para o ID :: " + cadastro.getValor1()));
@@ -45,17 +51,11 @@ public class ProdutoController {
 			case "descricaoConsulta":
                 listaProduto = this.produtoRepository.findProdutoByDescricao(cadastro.getValor1());
 				break;
-			// case "nome":
-			// 	listaUsuario = this.usuarioRepository.findUsuarioByNome(cadastro.getValor1());
-			// 	break;
 			default:
-				// implementar campo nao existente
-				// listaProduto.orElseThrow(() ->  new ResourceNotFoundException("Campo inexistente na tabela do banco de dados!" + cadastro.getCampo()));
+				new ResourceNotFoundException("Campo inexistente na tabela do banco de dados!" + cadastro.getCampo());
 				break;
 		}
 
 		return listaProduto;
 	}
-
-	// Ajustes Aula - Correcao pra quando nao tiver valor1, da erro
 }
