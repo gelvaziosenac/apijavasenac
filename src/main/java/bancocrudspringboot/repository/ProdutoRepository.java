@@ -16,7 +16,7 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long>{
     List<Produto>findProdutoByDescricao(@Param("descricao")String descricao);
     
     List<Produto>findProdutoByEstoque(int estoque);
-    
+
     List<Produto>findProdutoByPreco(double preco);
 
     @Query(value = "select * from produto where id >= :codigo", nativeQuery = true)
@@ -38,6 +38,8 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long>{
     List<Produto> findProdutoEntreValores(@Param("codigo1")long codigo1, @Param("codigo2")long codigo2);
     
     @Query(value = "select * from produto where id in :listaCodigo", nativeQuery = true)
-    List<Produto> findProdutoContidoEm(@Param("listaCodigo")String[] listaCodigo);
-    
+    List<Produto> findProdutoContidoEm(@Param("listaCodigo")List<Integer>listaCodigo);
+
+    @Query(value = "select * from produto where id not in :listaCodigo", nativeQuery = true)
+    List<Produto> findProdutoNaoContidoEm(@Param("listaCodigo")List<Integer>listaCodigo);
 }
