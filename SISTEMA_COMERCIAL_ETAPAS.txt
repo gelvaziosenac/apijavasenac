@@ -1,0 +1,154 @@
+## Grupo 01
+GABRIELE
+ADRIANO 
+DIEGO RICARDO
+
+## Grupo 02
+Cauê
+Bruna
+Júlio
+
+## Grupo 03
+Eduarda
+Romulo
+Helton
+
+## Grupo 04
+Yan Carlos Schaffer
+Vinicius 
+Ryan 
+
+## Grupo 05
+Mikael e Ana Luiza Zanatta
+
+## Grupo 06
+CARLOS EDUARDO BARBOSA PEREIRA - NAO VEIO NA AULA.
+
+GUSTAVO VINICIUS HENKLEIN MARTINS
+JÉSSICA DIRKSEN
+DAVID HENRIQUE CARDOSO MAY
+PÂMELA 
+
+[LISTA DE ATIVIDADES DA AULA - ALGORITMOS - VERIFICAR EXERCICIOS FEITOS - 10-06-2024 - avaliacaoes
+Exceto repetição.
+Nota com Indicadores
+
+[LISTA DE ATIVIDADES DA AULA - 10-06-2024 - avaliacoes - banco de dados
+Nota com Indicadores
+###################################################ATIVIDADE 01####################################
+ATIVIDADE 01 - 
+EXPLICACAO AULA= 07:00 ATE AS 08:00
+INICIO - 05-06-2024 07:10
+FIM - 10-06-2024 ATE AS 08:00 PARA FINALIZAR 
+ENTREGAR ATE 11-06-2024 AS 22:10.
+
+LINK:
+https://github.com/Gelvazio/aulas-senac/blob/main/BANCO_DE_DADOS/ExerciciosBancoDados/AtividadeBancoDados01-05-06-2024.sql
+
+###################################################ATIVIDADE 02####################################
+ATIVIDADE 02 - FAZER EM GRUPOS - 
+EXPLICACAO AULA = 07:00 ATE AS 08:00 - 
+LINK EXPLICACAO - 
+https://github.com/Gelvazio/aulas-senac/blob/main/BANCO_DE_DADOS/ExerciciosBancoDados/ComandosSQLBancoDados-05-06-2024.sql
+
+INICIO - 10-06-2024 08:10
+FIM - 11-06-2024 ATE AS 08:00 PARA FINALIZAR 
+ENTREGAR ATE 12-06-2024 AS 22:10.
+LINK:
+https://github.com/Gelvazio/aulas-senac/blob/main/BANCO_DE_DADOS/ExerciciosBancoDados/AtividadeBancoDados02-10-06-2024.sql
+
+###################################################ATIVIDADE 03####################################
+ATIVIDADE 03 - 
+EXPLICACAO AULA= 07:00 ATE AS 08:00
+LINK EXPLICACAO - 
+https://github.com/Gelvazio/aulas-senac/blob/main/BANCO_DE_DADOS/ExerciciosBancoDados/ComandosSQLBancoDados-05-06-2024.sql
+
+INICIO - 10-06-2024 08:10
+FIM - 11-06-2024 ATE AS 08:00 PARA FINALIZAR 
+ENTREGAR ATE 12-06-2024 AS 22:10.
+LINK:
+https://github.com/Gelvazio/aulas-senac/blob/main/BANCO_DE_DADOS/ExerciciosBancoDados/AtividadeBancoDados03-10-06-2024.sql
+
+###################################################ATIVIDADE 04####################################
+
+[FINALIZACAO API - API JAVA - Orientacao a objetos
+FINALIZAR OS CADASTROS DE API ABAIXO:
+#PRODUTO -
+Listar - metodo GET - findAll() - finalizado
+Consultar - metodo POST - consultaproduto() - finalizado
+
+Inserir - metodo POST - criar o metodo em sala de aula com o professor-feito
+Alterar - metodo PUT - criar o metodo em sala de aula com o professor-feito
+Excluir - metodo DELETE - criar o metodo em sala de aula com o professor-feito
+
+#CLIENTE - Alunos - criar as rotas (INSERIR,ALTERAR, EXCLUIR) - 10-06-2024
+Listar - metodo GET - findAll() - finalizado - finalizado na Atividade 01
+Consultar - metodo POST - consultaproduto() - finalizado na Atividade 01
+
+Inserir - metodo POST - criar o metodo em sala de aula com o professor
+Alterar - metodo PUT - criar o metodo em sala de aula com o professor
+Excluir - metodo DELETE - criar o metodo em sala de aula com o professor
+
+#VENDA
+Listar - metodo GET - findAll() - criar o metodo em sala de aula com o professor
+Consultar - metodo POST - consultacondicaopagamento() - criar o metodo em sala de aula com o professor
+Inserir - metodo POST - criar o metodo em sala de aula com o professor
+Alterar - metodo PUT - criar o metodo em sala de aula com o professor
+Excluir - metodo DELETE - criar o metodo em sala de aula com o professor
+
+#ITEM
+Listar - metodo GET - findAll() - criar o metodo em sala de aula com o professor
+Consultar - metodo POST - consultacondicaopagamento() - criar o metodo em sala de aula com o professor
+Inserir - metodo POST - criar o metodo em sala de aula com o professor
+Alterar - metodo PUT - criar o metodo em sala de aula com o professor
+Excluir - metodo DELETE - criar o metodo em sala de aula com o professor
+
+# ultimas rotas
+#USUARIO - SALA DE AULA 
+Listar - metodo GET - findAll() - criar o metodo em sala de aula com o professor
+Consultar - metodo POST - consultacondicaopagamento() - criar o metodo em sala de aula com o professor
+Inserir - metodo POST - criar o metodo em sala de aula com o professor
+Alterar - metodo PUT - criar o metodo em sala de aula com o professor
+Excluir - metodo DELETE - criar o metodo em sala de aula com o professor
+Login - metodo POST - criar o metodo em sala de aula com o professor
+
+#CONDICAO PAGAMENTO -
+Listar - metodo GET - findAll() - criar o metodo em sala de aula com o professor
+Consultar - metodo POST - consultacondicaopagamento() - criar o metodo em sala de aula com o professor
+Inserir - metodo POST - criar o metodo em sala de aula com o professor
+Alterar - metodo PUT - criar o metodo em sala de aula com o professor
+Excluir - metodo DELETE - criar o metodo em sala de aula com o professor
+
+#VENDEDOR
+Listar - metodo GET - findAll() - criar o metodo em sala de aula com o professor
+Consultar - metodo POST - consultacondicaopagamento() - criar o metodo em sala de aula com o professor
+Inserir - metodo POST - criar o metodo em sala de aula com o professor
+Alterar - metodo PUT - criar o metodo em sala de aula com o professor
+Excluir - metodo DELETE - criar o metodo em sala de aula com o professor
+
+# PROJETO INTEGRADOR
+
+#LINK DA API COMPLETA
+https://github.com/gelvaziosenac/apijava/tree/main/src/main/java/bancocrudspringboot/v2
+
+[front end - 
+Verificar pra utilizar o projeto abaixo, mais simples 
+https://github.com/Gelvazio/sistemacompleto
+
+
+[ACAO TODOS EM PRODUTO E CLIENTE 
+FRONT-END 
+INSERIR, ALTERAR E EXCLUIR 
+
+APOS INTERVALO, CONSULTA DE CLIENTE.
+FRONT END 
+
+[LOGIN DO SISTEMA 
+LOGIN - CRIADO 
+FALTA CADASTRAR NOVO USUARIO
+
+-ROTA ESQUECEU SENHA, PRECISA DE JAVA EMAIL.
+
+
+
+
