@@ -15,7 +15,7 @@ import bancocrudspringboot.exception.ResourceNotFoundException;
 import bancocrudspringboot.model.ConsultaPadrao;
 import bancocrudspringboot.model.OperadoresConsulta;
 import bancocrudspringboot.model.Produto;
-import bancocrudspringboot.model.UsuarioEntity;
+import bancocrudspringboot.model.Usuario;
 import bancocrudspringboot.repository.ProdutoRepository;
 
 @CrossOrigin

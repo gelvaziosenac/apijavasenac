@@ -2,7 +2,8 @@ package bancocrudspringboot.controller;
 
 import bancocrudspringboot.exception.ResourceNotFoundException;
 import bancocrudspringboot.model.ConsultaPadrao;
-import bancocrudspringboot.model.UsuarioEntity;
+import bancocrudspringboot.model.Usuario;
+import bancocrudspringboot.model.Login;
 import bancocrudspringboot.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,17 +30,17 @@ public class UsuarioController {
 	// Listar todos os usuarios
 	@GetMapping("/usuarios")
 	@ResponseStatus(HttpStatus.OK)
-	public List<UsuarioEntity> getAllCadastros() {
+	public List<Usuario> getAllCadastros() {
 		return this.usuarioRepository.findAll();
 	}
 
 	// pegar o usuario pelo id
 	@GetMapping("/usuarios/{id}")
 	@ResponseStatus(HttpStatus.OK)
-	public ResponseEntity<UsuarioEntity> getCadastroById(@PathVariable(value = "id") Long cadastroId)
+	public ResponseEntity<Usuario> getCadastroById(@PathVariable(value = "id") Long cadastroId)
 			throws ResourceNotFoundException {
 
-		UsuarioEntity cadastro = usuarioRepository.findById(cadastroId)
+		Usuario cadastro = usuarioRepository.findById(cadastroId)
 				.orElseThrow(() -> new ResourceNotFoundException("Usuário não encontrado para o ID :: " + cadastroId));
 		return ResponseEntity.ok().body(cadastro);
 
@@ -48,15 +49,15 @@ public class UsuarioController {
 	// Salvar dados
 	@PostMapping("/usuarios")
 	@ResponseStatus(HttpStatus.CREATED)
-	public UsuarioEntity createCadastro(@RequestBody UsuarioEntity cadastro) {
+	public Usuario createCadastro(@RequestBody Usuario cadastro) {
 		return this.usuarioRepository.save(cadastro);
 	}
 
 	@PutMapping("/usuarios/{id}")
 	@ResponseStatus(HttpStatus.OK)
-	public ResponseEntity<UsuarioEntity> updateCadastro(@PathVariable(value = "id") Long cadastroId,
-														@Validated @RequestBody UsuarioEntity cadastroCaracteristicas) throws ResourceNotFoundException {
-		UsuarioEntity cadastro = usuarioRepository.findById(cadastroId)
+	public ResponseEntity<Usuario> updateCadastro(@PathVariable(value = "id") Long cadastroId,
+														@Validated @RequestBody Usuario cadastroCaracteristicas) throws ResourceNotFoundException {
+		Usuario cadastro = usuarioRepository.findById(cadastroId)
 				.orElseThrow(() -> new ResourceNotFoundException("Usuário não encontrado para o ID :: " + cadastroId));
 
 		cadastro.setEmail(cadastroCaracteristicas.getEmail());
@@ -70,7 +71,7 @@ public class UsuarioController {
 	@ResponseStatus(HttpStatus.OK)
 	public Map<String, Boolean> deleteCadastro(@PathVariable(value = "id") Long cadastroId)
 			throws ResourceNotFoundException {
-		UsuarioEntity cadastro = usuarioRepository.findById(cadastroId)
+		Usuario cadastro = usuarioRepository.findById(cadastroId)
 				.orElseThrow(() -> new ResourceNotFoundException("Usuário não encontrado para o ID :: " + cadastroId));
 
 		this.usuarioRepository.delete(cadastro);
@@ -84,14 +85,14 @@ public class UsuarioController {
 
 	@PostMapping("/consultausuarios")
 	@ResponseStatus(HttpStatus.OK)
-	public List<UsuarioEntity> consultaCadastro(@Validated @RequestBody ConsultaPadrao cadastro) throws ResourceNotFoundException {
+	public List<Usuario> consultaCadastro(@Validated @RequestBody ConsultaPadrao cadastro) throws ResourceNotFoundException {
 
 		String campoUsuario = cadastro.getCampo();
-		List<UsuarioEntity> listaUsuario = new ArrayList<>();
+		List<Usuario> listaUsuario = new ArrayList<>();
 
 		switch (campoUsuario) {
             case "id":
-                UsuarioEntity usuario = usuarioRepository.findById(Long.parseLong(cadastro.getValor1()))
+                Usuario usuario = usuarioRepository.findById(Long.parseLong(cadastro.getValor1()))
                         .orElseThrow(() -> new ResourceNotFoundException("Registro não encontrado para o ID :: " + cadastro.getValor1()));
 
                 listaUsuario.add(usuario);
@@ -109,4 +110,19 @@ public class UsuarioController {
 
 		return listaUsuario;
 	}
+
+	// Login
+	@PostMapping("/login")
+	@ResponseStatus(HttpStatus.OK)
+	public Usuario login(@Validated @RequestBody Login cadastro) throws ResourceNotFoundException {
+
+		String email = cadastro.getEmail();
+		String senha = cadastro.getSenha();
+
+		Usuario usuario = this.usuarioRepository.findUsuarioByEmailAndSenha(email, senha)
+			.orElseThrow(() -> new ResourceNotFoundException("Usuario ou senha inválido!"));
+
+		return usuario;
+	}
+
 }
